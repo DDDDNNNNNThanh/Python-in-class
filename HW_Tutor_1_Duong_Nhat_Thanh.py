@@ -6,11 +6,6 @@
 
 # Ex1:
 
-# ![image.png](attachment:image.png)
-
-# In[5]:
-
-
 n = int(input("n (even number) = "))
 a = int(input("a = "))
 b = int(input("b = "))
@@ -28,11 +23,6 @@ print(res)
 
 # Ex2:
 
-# ![image.png](attachment:image.png)
-
-# In[58]:
-
-
 card_number = input("Please input card number:")
 digits = [int(d) for d in str(card_number)]
 odd_digits = digits[-1::-2]
@@ -49,11 +39,6 @@ print('Valid') if checksum%10==0 else print('Invalid')
 
 # Ex3:
 
-# ![image.png](attachment:image.png)
-
-# In[62]:
-
-
 x = int(input("Please enter x ="))
 n = int(input("Please enter n ="))
 sum = 0
@@ -64,21 +49,12 @@ print(sum)
 
 # Ex4:
 
-# ![image.png](attachment:image.png)
-# 
-
-# $A(x,y)=x^2+4x+y^2+7x-5$
-
-# In[63]:
-
-
 x = int(input("Please enter x="))
 y = int(input("Please enter y="))
 A = x**2+4*x+y**2+7*x-5
 print(A)
 
 
-# In[ ]:
 
 
 
