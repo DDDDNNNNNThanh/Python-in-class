@@ -24,7 +24,7 @@ print(res)
 # Ex2:
 
 card_number = input("Please input card number:")
-digits = [int(d) for d in str(card_number)]
+digits = [int(d) for d in card_number]
 odd_digits = digits[-1::-2]
 even_digits = digits[-2::-2]
 checksum = 0
