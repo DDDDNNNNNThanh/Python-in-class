@@ -6,35 +6,39 @@
 
 # Ex1:
 
-n = int(input("n (even number) = "))
-a = int(input("a = "))
-b = int(input("b = "))
-step = [x/n for x in range(n*a,n*b+1)]
-h = (b-a)/n
-res = h/3*(1/a+1/b)
-x0 = a
-for i in range(n//2):
-    x_odd= x0 + (2*i-1)*h/3
-    x_even= x0 + (2*i)*h/3
-    res = res + 4*1/x_odd + 2*1/x_even
-print(res)
-    
+import math
+def f(x):
+    return 1/x
+n = int(input("enter n(even numbers) = "))
+a = int(input("enter a = "))
+b = int(input("enter b = "))
+dx = (b-a)/n
+s = 0
+for i in range(1,(n//2+1)):
+    s += dx/3*(f(a+(2*i-2)*dx) + 4*f(a+(2*i-1)*dx) + f(a+2*i*dx))
+print(f"result = {s}")
+error = math.log(b) - math.log(a) - s
+print(f"error = {error}")
 
 
 # Ex2:
 
 card_number = input("Please input card number:")
 digits = [int(d) for d in card_number]
-odd_digits = digits[-1::-2]
-even_digits = digits[-2::-2]
+last_digit = digits[-1]
+new_digits = digits[:-1]
+odd_digits = new_digits[-1::-2]
+even_digits = new_digits[-2::-2]
+print(odd_digits)
 checksum = 0
-checksum += sum(odd_digits)
-for d in even_digits:
-    d = d*2
-    if d>=10:
-        d = d//10 + d%10
+checksum += sum(even_digits)
+for d in odd_digits:
+    d = d * 2
+    if d >= 10:
+        d = d - 9
     checksum += d
-print('Valid') if checksum%10==0 else print('Invalid')
+check_digit = 10 - (checksum%10)
+print('Valid') if check_digit==last_digit else print('Invalid')
 
 
 # Ex3:
