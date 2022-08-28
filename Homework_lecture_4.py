@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# Dương Nhật Thành
-
-# DSEB 63
-
-# 11919287
 
 # Ex1
 
