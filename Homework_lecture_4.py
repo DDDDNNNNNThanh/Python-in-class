@@ -326,26 +326,22 @@ for i in new_customer_name_age:
             total_customer_money += j[2]
             if j[1] < 10:
                 discount = 0.15
-                gift = 1
+                total_customer_money -= 2
             elif j[1] < 18:
                 discount = 0.08
                 if j[0] in women:
-                    gift = 1
+                    total_customer_money -= 2
             elif j[1] < 23:
                 discount = 0.05
                 if j[0] in women:
-                    gift = 1
+                    total_customer_money -= 2
             elif j[1] < 60:
                 discount = 0.02
             else:
                 discount = 0.25
                 gift = 1
     total_customer_money = total_customer_money - total_customer_money*discount
-    if gift == 1 :
-        print(f"customer{i[0:2]} = {total_customer_money} receives a gift(Gift=$2)")
-    else:
-        print(f"customer{i[0:2]} = {total_customer_money} receives no gift")
-
+    print(f"Customer{i} = {total_customer_money}")
 
 # Ex7:
 
@@ -358,35 +354,13 @@ for i in new_customer_name_age:
 # In[295]:
 
 
-import sympy as sym
-x, y = sym.symbols('x y')
-
-
-# In[296]:
-
-
-def Check(str):
-    try:
-        int(str)
-        return 0
-    except:
-        return 1
-    
-A = str(2*x*y + 4*x + 5*y + x**2 - y**2 - 5)
-B = "".join(A.split('**'))
-C = "".join(B.split('*'))
-D = "".join(C.split('+'))
-E = "".join(D.split('*'))
-F = "".join(E.split('-'))
-G = "".join(F.split(' '))
-H = G.split()
+A = '2*x*y + 4*x + 5*y + x**2 - y**2 - 5'
 variable = []
-for i in G:
-    if Check(i)==1:
+for i in A:
+    if 'a'<= i and i<='z':
         variable.append(i)
-new_variable = set(variable)
-print(len(new_variable))
-
+variable = set(variable)
+print("The number of variable:",len(variable))
 
 # b
 
@@ -395,7 +369,7 @@ print(len(new_variable))
 
 x = int(input('x = '))
 y = int(input('y = '))
-result = 2*x*y + 4*x + 5*y + x**2 - y**2 - 5
+result = eval('2*x*y + 4*x + 5*y + x**2 - y**2 - 5')
 print('A =',result)
 
 
